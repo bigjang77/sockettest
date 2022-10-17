@@ -10,8 +10,8 @@ window.onload = function () {
             stomp.subscribe('/sub/alarm/' + receiver, function (result) {
                 let parsingResult = JSON.parse(result.body);
                 console.log(parsingResult);
-                $("#boxAlarm").empty();
-                $("#boxAlarm").append(viewMessage(parsingResult));
+                $("#alarmContainer").empty();
+                $("#alarmContainer").append(viewMessage(parsingResult));
                 $("#notificationDropdown").dropdown('show');
             });
         });
@@ -20,10 +20,10 @@ window.onload = function () {
 
 function viewMessage(message) {
     let sender = message.sender;
-    let alarmType = message.alarmType;
+    let alarmMessage = message.alarmMessage;
 
 
-    let resultMessage = `<div class="preview-item-content">` + sender + ` 님이 ` + alarmType + `하였습니다</div>`;
+    let resultMessage = `<div class="preview-item-content">` + sender + ` 님이 ` + alarmMessage + `하였습니다</div>`;
     return resultMessage
 }
 // header---------------------------------------------------------------------
@@ -33,7 +33,7 @@ function sendData() {
     let subscriber = $("#subscriber").val();
     let data = {
         'receiver': subscriber,
-        'alarmType': '구독함',
+        'alarmMessage': '구독함',
         'sender': receiver,
     };
 
