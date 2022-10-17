@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class MessageDto {
+public class AlarmDto {
     private String receiver;
     private String sender;
     private String alarmMessage;
