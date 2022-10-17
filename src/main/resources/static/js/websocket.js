@@ -30,9 +30,9 @@ function viewMessage(message) {
 
 
 function sendData() {
-    let writer = $("#writer").val();
+    let subscriber = $("#subscriber").val();
     let data = {
-        'receiver': writer,
+        'receiver': subscriber,
         'alarmType': '구독함',
         'sender': receiver,
     };
