@@ -63,7 +63,7 @@ public class EmployeeController {
             return new CMRespDto<>(-1, "로그인실패", null);
         }
         session.setAttribute("principal", principal);
-        return new CMRespDto<>(1, "로그인성공", null);
+        return new CMRespDto<>(1, "로그인성공", principal);
     }
 
     @GetMapping("/emp/matchingNotice")
