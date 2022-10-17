@@ -15,7 +15,7 @@ public class WebSocketController {
 
     @MessageMapping("/alarm")
     public void test(MessageDto messageDto) throws Exception {
-        System.out.println(messageDto.getAlarmtype());
+        System.out.println(messageDto.getAlarmMessage());
 
         messageSendingOperations.convertAndSend("/sub/alarm/" + messageDto.getReceiver(), messageDto);
     }

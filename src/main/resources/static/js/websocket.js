@@ -6,13 +6,11 @@ window.onload = function () {
         let socket = new SockJS('/websocket');
         stomp = Stomp.over(socket);
         stomp.connect({}, function () {
-            console.log('연결됨');
             stomp.subscribe('/sub/alarm/' + receiver, function (result) {
                 let parsingResult = JSON.parse(result.body);
                 console.log(parsingResult);
                 $("#alarmContainer").empty();
                 $("#alarmContainer").append(viewMessage(parsingResult));
-                $("#notificationDropdown").dropdown('show');
             });
         });
     }

@@ -8,5 +8,5 @@ import lombok.Setter;
 public class MessageDto {
     private String receiver;
     private String sender;
-    private String alarmtype;
+    private String alarmMessage;
 }
