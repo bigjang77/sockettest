@@ -15,6 +15,7 @@
       <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
       <title>4조 PROJECT</title>
     </head>
 
@@ -50,26 +51,6 @@
                   <a class="btn_logout" href="/logout">로그아웃</a>
                   <a href="/emp/mypageInsertForm/${principal.employeeId}" class="btn_mypage">마이 페이지</a>
                   <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
-                  <!-----------알림창------------>
-                  <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
-                    data-toggle="dropdown">
-                    <i class="bi bi-bell-fill"></i>
-                    <%-- <span class="count"></span>--%>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                    aria-labelledby="notificationDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                    <a class="dropdown-item preview-item">
-                      <div class="preview-thumbnail">
-                        <div class="preview-icon bg-success">
-                        </div>
-                      </div>
-                      <div id="boxAlarm" class="mx-3">
-                        <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                      </div>
-                    </a>
-                  </div>
-                  </li>
                 </c:otherwise>
               </c:choose>
             </div>
@@ -237,10 +218,10 @@
       </div>
       <c:choose>
         <c:when test="${!empty principal.employeeId}">
-          <input class="checkUser" type="hidden" value="${sessionScope.principal.employeeName}">
+          <input class="checkprinciple" type="hidden" value="${sessionScope.principal.employeeName}">
         </c:when>
         <c:when test="${!empty principal.companyId}">
-          <input class="checkUser" type="hidden" value="${sessionScope.principal.companyName}">
+          <input class="checkprinciple" type="hidden" value="${sessionScope.principal.companyName}">
         </c:when>
       </c:choose>
 

@@ -1,4 +1,4 @@
-let receiver = $(".checkUser").val();
+let receiver = $(".checkprinciple").val();
 let stomp = "";
 
 window.onload = function () {

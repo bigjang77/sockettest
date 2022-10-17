@@ -14,8 +14,8 @@
           <input id="writer" type="hidden" value="${detailDto.companyName}">
           <span>회사이름:${detailDto.companyName}</span>
           <div id="logo_info" class="form">
-            <div>구독 <i id="iconSub"
-                class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-heart my_pointer my_red'></i>
+            <div>구독 <i id="iconSub" class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-heart my_pointer my_red'
+                onclick="sendData()"></i>
             </div>
             <!-- subscribe_btn -->
             <div class="logo_form">
