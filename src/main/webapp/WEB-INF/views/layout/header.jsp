@@ -52,6 +52,9 @@
                   <a href="/emp/mypageInsertForm/${principal.employeeId}" class="btn_mypage">마이 페이지</a>
                   <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
                   <!--여기에 alarmContainer 만들어야함-->
+                  <div id="alarmContainer">
+                    <span></span>
+                  </div>
                 </c:otherwise>
               </c:choose>
             </div>
@@ -219,10 +222,10 @@
       </div>
       <c:choose>
         <c:when test="${!empty principal.employeeId}">
-          <input class="checkprinciple" type="hidden" value="${sessionScope.principal.employeeName}">
+          <input class="checkprinciple" type="hidden" value="${principal.employeeName}">
         </c:when>
         <c:when test="${!empty principal.companyId}">
-          <input class="checkprinciple" type="hidden" value="${sessionScope.principal.companyName}">
+          <input class="checkprinciple" type="hidden" value="${principal.companyName}">
         </c:when>
       </c:choose>
 

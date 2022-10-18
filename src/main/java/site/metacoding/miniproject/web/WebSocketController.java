@@ -15,12 +15,13 @@ public class WebSocketController {
 
     @MessageMapping("/alarm")
     public void test(AlarmDto alarmDto) throws Exception {
+        System.out.println(alarmDto.getAlarmMessage());
 
         messageSendingOperations.convertAndSend("/sub/alarm/" + alarmDto.getReceiver(), alarmDto);
     }
 
-    public boolean findByLoginUser(String subscriber, String loginUser) {
-        if (subscriber.equals(loginUser)) {
+    public boolean findByLoginUser(String receiver, String loginUser) {
+        if (receiver.equals(loginUser)) {
             return true;
         }
         return false;

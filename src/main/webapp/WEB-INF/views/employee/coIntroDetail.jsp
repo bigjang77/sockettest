@@ -11,11 +11,11 @@
           <input id="introId" type="hidden" value="${detailDto.introId}" />
           <input id="subscribeId" type="hidden" value="${detailDto.subscribeId}" />
           <input id="principalId" type="hidden" value="${principal.getEmployeeId()}" />
-          <input id="subscriber" type="hidden" value="${detailDto.companyName}">
-          <span>회사이름:${detailDto.companyName}</span>
+          <input id="receiver" type="hidden" value="${detailDto.companyName}">
+          <input id="sender" type="hidden" value="${principal.employeeName}">
           <div id="logo_info" class="form">
             <div>구독 <i id="iconSub" class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-heart my_pointer my_red'
-                onclick="sendData()"></i>
+                onclick="subscribe()"></i>
             </div>
             <!-- subscribe_btn -->
             <div class="logo_form">
